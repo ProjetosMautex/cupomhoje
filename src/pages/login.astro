@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+// Se já tiver logado, vai pro app
+if (Astro.cookies.has('session')) {
+  return Astro.redirect('/app');
+}
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-900 font-sans text-white h-screen flex items-center justify-center">
+    
+    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl w-full max-w-md">
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold text-white mb-2">Área de Membros</h1>
+        <p class="text-slate-400 text-sm">Protocolo Fim das Cobranças</p>
+      </div>
+      
+      <form action="/api/auth/login" method="POST" class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">E-mail</label>
+          <input type="email" name="email" required class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="seu@email.com" />
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-2">Senha</label>
+          <input type="password" name="password" required class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="••••••••" />
+        </div>
+        
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition">
+          Entrar no Mini-App
+        </button>
+      </form>
+    </div>
+
+  </body>
+</html>

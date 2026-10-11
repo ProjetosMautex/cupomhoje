@@ -1,0 +1,77 @@
+---
+import '../../styles/global.css';
+import SnowballSimulator from '../../components/app/SnowballSimulator';
+import ScriptGenerator from '../../components/app/ScriptGenerator';
+
+// Proteção de rota
+const session = Astro.cookies.get('session');
+if (!session) {
+  return Astro.redirect('/login');
+}
+
+// Num app real, buscaríamos os dados do usuário no SQLite usando session.value (que é o ID)
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-50 font-sans text-slate-800 antialiased flex h-screen overflow-hidden">
+    
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-900 text-slate-300 flex-shrink-0 border-r border-slate-800 hidden md:flex flex-col">
+      <div class="p-6 border-b border-slate-800">
+        <h1 class="text-white font-bold text-xl leading-tight">Protocolo<br/><span class="text-blue-500">Fim das Cobranças</span></h1>
+      </div>
+      <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+        <a href="#" class="block px-4 py-3 bg-blue-600/10 text-blue-400 rounded-lg font-medium border border-blue-500/20">🚀 Dashboard</a>
+        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">📖 O Manual Interativo</a>
+        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">🛡️ Calc. Blindagem</a>
+        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">📝 Gerador de Roteiro</a>
+      </nav>
+      <div class="p-4 border-t border-slate-800 text-sm">
+        <p>Sessão Segura</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto p-8">
+      <header class="mb-10">
+        <h2 class="text-3xl font-extrabold text-slate-900">Bem-vindo(a) ao seu escudo financeiro.</h2>
+        <p class="text-slate-500 mt-2">Vamos iniciar a retomada do seu controle.</p>
+      </header>
+
+      <!-- Painel de Missões -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-slate-800 mb-4">Missões do Protocolo</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-blue-500">
+            <h4 class="font-bold text-slate-900 mb-1">1. O Raio-X</h4>
+            <p class="text-sm text-slate-500">Descubra o valor real e limpe a gordura.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer opacity-70">
+            <h4 class="font-bold text-slate-900 mb-1">2. Blindagem de Salário</h4>
+            <p class="text-sm text-slate-500">Calcule o seu Mínimo Existencial.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer opacity-70">
+            <h4 class="font-bold text-slate-900 mb-1">3. Ataque</h4>
+            <p class="text-sm text-slate-500">Gere e envie a mensagem de negociação.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulador React -->
+      <div class="mb-12">
+        <SnowballSimulator client:load />
+      </div>
+
+      <!-- Gerador de Roteiro React -->
+      <div class="mb-12">
+        <ScriptGenerator client:load />
+      </div>
+      
+    </main>
+
+  </body>
+</html>
