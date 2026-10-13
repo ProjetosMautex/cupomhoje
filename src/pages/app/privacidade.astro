@@ -1,0 +1,102 @@
+---
+import '../../styles/global.css';
+import AppFooter from '../../components/app/AppFooter.astro';
+
+const session = Astro.cookies.get('session');
+const backUrl = session ? '/app' : '/fim-das-cobrancas';
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Políticas de Privacidade - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen p-4 sm:p-8">
+    <div class="max-w-3xl mx-auto">
+      <a href={backUrl} class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white mb-6 transition">
+        &larr; {session ? 'Voltar ao Início' : 'Voltar'}
+      </a>
+
+      <header class="mb-8 border-b border-slate-800 pb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-1">Proteção e Segurança</span>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">Políticas de Privacidade</h1>
+        <p class="text-sm text-slate-400 mt-2">
+          Entenda como protegemos seus dados e por que suas informações financeiras nunca são gravadas em nossos servidores.
+        </p>
+      </header>
+
+      <div class="space-y-8 text-sm text-slate-300 leading-relaxed">
+        
+        <!-- Seção 1: Processamento Local e Efêmero -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">1.</span> Processamento Financeiro 100% Local e Efêmero
+          </h2>
+          <p>
+            Para a sua total privacidade e tranquilidade, o <strong>Protocolo Fim das Cobranças</strong> foi projetado com uma arquitetura de dados efêmera:
+          </p>
+          <ul class="list-disc pl-5 mt-3 space-y-2 text-slate-400">
+            <li>
+              <strong>Memória Volátil:</strong> Todos os dados que você insere no <em>Raio-X de Dívidas</em> e no <em>Simulador Bola de Neve</em> (como seu salário, despesas com alimentação/moradia, credores, parcelas e valores cobrados) são processados exclusivamente na memória temporária (RAM) do seu próprio navegador/dispositivo.
+            </li>
+            <li>
+              <strong>Nenhum Registro no Servidor:</strong> Nós <strong>NÃO</strong> salvamos, não gravamos e não transmitimos os valores das suas dívidas para bancos de dados centrais ou servidores remotos. Ao fechar o navegador ou sair da tela, todas as simulações financeiras somem permanentemente.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Seção 2: Dados de Cadastro e Acesso -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">2.</span> Dados de Cadastro e Autenticação
+          </h2>
+          <p>
+            As únicas informações armazenadas em nosso banco de dados seguro são as estritamente necessárias para a gestão do seu acesso de membro aluno:
+          </p>
+          <ul class="list-disc pl-5 mt-3 space-y-2 text-slate-400">
+            <li><strong>E-mail cadastrado na compra:</strong> Recebido via integração de pagamento oficial (ex: Kiwify) para vincular sua licença de uso.</li>
+            <li><strong>Credenciais de acesso criptografadas:</strong> Senha de acesso com hash de segurança para autenticar seu login.</li>
+            <li><strong>Status da licença:</strong> Registro de liberação (ativo ou cancelado em caso de estorno).</li>
+          </ul>
+          <p class="mt-3 text-slate-400">
+            Não comercializamos, não alugamos e não compartilhamos seus dados de contato com terceiros ou redes de publicidade.
+          </p>
+        </section>
+
+        <!-- Seção 3: Isenção de Responsabilidade e Manutenção de Conteúdo -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">3.</span> Isenção de Responsabilidade e Atualizações Legislativas
+          </h2>
+          <p>
+            Conforme disposto em nossos Termos de Uso:
+          </p>
+          <ul class="list-disc pl-5 mt-3 space-y-2 text-slate-400">
+            <li>
+              O usuário é exclusivamente responsável por suas ações, contatos com bancos e decisões de negociação. As ferramentas têm caráter puramente informativo e didático.
+            </li>
+            <li>
+              O desenvolvedor não garante nem tem obrigação contratual de atualizar indefinidamente as referências normativas e os simuladores do app caso haja reformas legislativas supervenientes.
+            </li>
+            <li>
+              Em caso de alteração da lei sem atualização da ferramenta, o app poderá ser retirado de venda a critério do autor, ficando assegurado aos compradores prévios o acesso contínuo aos dados da versão adquirida, sem direito a exigir atualizações contínuas de conteúdo legal.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Seção 4: Seus Direitos (LGPD) -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">4.</span> Direitos do Usuário (LGPD)
+          </h2>
+          <p>
+            Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD), você tem o direito de solicitar a confirmação da existência de tratamento dos seus dados de acesso, a correção de dados incompletos ou a exclusão definitiva do seu cadastro de usuário dos nossos servidores.
+          </p>
+        </section>
+
+      </div>
+
+      <AppFooter />
+    </div>
+  </body>
+</html>

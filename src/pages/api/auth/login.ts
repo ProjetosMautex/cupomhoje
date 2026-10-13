@@ -1,46 +1,46 @@
 import type { APIRoute } from 'astro';
-import db from '../../../lib/db';
-import crypto from 'node:crypto';
+import { CURRENT_WEEK_PASSWORD, getExpectedSessionToken } from '../../../lib/auth-config';
 
 export const POST: APIRoute = async ({ request, cookies }) => {
   try {
     const data = await request.formData();
-    const email = data.get('email')?.toString();
-    const password = data.get('password')?.toString();
+    const email = (data.get('email')?.toString() || '').trim();
+    const password = (data.get('password')?.toString() || '').trim();
 
-    if (!email || !password) {
-      return new Response(JSON.stringify({ error: 'Preencha todos os campos' }), { status: 400 });
+    if (!password) {
+      return new Response(null, {
+        status: 302,
+        headers: { Location: '/login?error=empty' }
+      });
     }
 
-    const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email) as any;
-
-    if (!user || user.status !== 'active') {
-      return new Response(JSON.stringify({ error: 'Usuário não encontrado ou inativo' }), { status: 401 });
-    }
-
-    const inputHash = crypto.createHash('sha256').update(password).digest('hex');
-    
-    if (inputHash === user.password_hash) {
-      // Set simple cookie
-      cookies.set('session', user.id.toString(), {
+    // Validação da senha semanal
+    if (password === CURRENT_WEEK_PASSWORD) {
+      // Define o cookie de sessão com o hash da semana atual
+      cookies.set('session', getExpectedSessionToken(), {
         path: '/',
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 60 * 60 * 24 * 7 // 1 week
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 14 // 14 dias (ou até mudar a senha no domingo)
       });
-      
-      // Redirect to /app
+
       return new Response(null, {
         status: 302,
         headers: { Location: '/app' }
       });
     } else {
-      return new Response(JSON.stringify({ error: 'Senha incorreta' }), { status: 401 });
+      return new Response(null, {
+        status: 302,
+        headers: { Location: '/login?error=wrong_password' }
+      });
     }
 
   } catch (error) {
     console.error('Login error:', error);
-    return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
+    return new Response(null, {
+      status: 302,
+      headers: { Location: '/login?error=server' }
+    });
   }
 };

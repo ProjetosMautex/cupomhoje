@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+const status = Astro.url.searchParams.get('status');
+const error = Astro.url.searchParams.get('error');
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar Senha - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-white min-h-screen flex items-center justify-center p-4">
+    
+    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl w-full max-w-md relative">
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner">
+          🔑
+        </div>
+        <h1 class="text-2xl font-black text-white">Recuperar Acesso</h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">
+          Digite o mesmo e-mail que você utilizou na compra na Kiwify.
+        </p>
+      </div>
+
+      <!-- Mensagens de Feedback -->
+      {status === 'sent' && (
+        <div class="mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm leading-relaxed">
+          <strong class="block font-bold mb-1">✅ E-mail enviado com sucesso!</strong>
+          Se este e-mail estiver cadastrado com uma compra ativa, enviamos um link para você criar uma nova senha. Verifique sua caixa de entrada e a pasta de spam.
+        </div>
+      )}
+
+      {error === 'empty' && (
+        <div class="mb-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm">
+          ⚠️ Por favor, informe o seu e-mail cadastrado na compra.
+        </div>
+      )}
+
+      {error === 'revoked' && (
+        <div class="mb-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm leading-relaxed">
+          ⚠️ Este acesso consta como cancelado ou reembolsado. Caso considere um engano, entre em contato com o suporte.
+        </div>
+      )}
+
+      {error === 'expired' && (
+        <div class="mb-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm">
+          ⚠️ O link de recuperação anterior expirou ou é inválido. Solicite um novo link abaixo.
+        </div>
+      )}
+
+      <form action="/api/auth/esqueci-senha" method="POST" class="space-y-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+            E-mail de Compra
+          </label>
+          <input 
+            type="email" 
+            name="email" 
+            required 
+            placeholder="seu@email.com" 
+            class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black py-3.5 px-4 rounded-xl transition shadow-[0_0_20px_rgba(16,185,129,0.3)] text-sm uppercase tracking-wide cursor-pointer"
+        >
+          Enviar Link de Recuperação
+        </button>
+      </form>
+
+      <div class="mt-8 pt-6 border-t border-slate-800 text-center">
+        <a href="/login" class="text-xs text-slate-400 hover:text-emerald-400 font-medium transition">
+          &larr; Voltar para a tela de Login
+        </a>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,102 @@
+---
+import '../../styles/global.css';
+import AppFooter from '../../components/app/AppFooter.astro';
+
+const session = Astro.cookies.get('session');
+const backUrl = session ? '/app' : '/fim-das-cobrancas';
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Termos de Uso - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen p-4 sm:p-8">
+    <div class="max-w-3xl mx-auto">
+      <a href={backUrl} class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white mb-6 transition">
+        &larr; {session ? 'Voltar ao Início' : 'Voltar'}
+      </a>
+
+      <header class="mb-8 border-b border-slate-800 pb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-1">Políticas da Plataforma</span>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">Termos de Uso do Aplicativo</h1>
+        <p class="text-sm text-slate-400 mt-2">
+          Leia atentamente as condições de uso, isenções de responsabilidade e diretrizes da plataforma.
+        </p>
+      </header>
+
+      <div class="space-y-8 text-sm text-slate-300 leading-relaxed">
+        
+        <!-- Seção 1 -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">1.</span> Finalidade Exclusivamente Educacional e Informativa
+          </h2>
+          <p>
+            Este Mini-App, bem como todos os e-books, calculadoras (Raio-X, Simulador "Bola de Neve"), roteiros de mensagens e materiais fornecidos pelo <strong>Protocolo Fim das Cobranças</strong>, possuem finalidade estritamente pedagógica, informativa e didática.
+          </p>
+          <p class="mt-2 text-slate-400">
+            O aplicativo não presta serviços de advocacia, consultoria jurídica ou assessoria contábil/financeira personalizada. Nenhuma funcionalidade deste sistema substitui a orientação técnica individualizada de um advogado devidamente inscrito na OAB, de um Defensor Público ou de órgãos oficiais de defesa do consumidor (como Procon e Ministério Público).
+          </p>
+        </section>
+
+        <!-- Seção 2 -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">2.</span> Isenção Total de Responsabilidade pelas Ações do Usuário
+          </h2>
+          <p>
+            O usuário é <strong>o único e exclusivo responsável</strong> por todas as decisões financeiras, negociações com credores, envio de notificações, comunicações via WhatsApp, cálculos apresentados a terceiros ou atos processuais e extrajudiciais que decidir praticar.
+          </p>
+          <div class="mt-3 bg-amber-950/20 border border-amber-900/40 p-4 rounded-xl text-amber-200/90 text-xs leading-relaxed">
+            <strong>Atenção:</strong> Recomendamos expressamente que o usuário não tome medidas drásticas ou precipitadas sem a prévia orientação de um profissional técnico de sua confiança. O autor e desenvolvedor da plataforma não respondem por prejuízos, recusas de acordos por instituições financeiras, apontamentos cadastrais (SPC/Serasa), execuções judiciais, apreensões de bens com alienação fiduciária ou quaisquer outros reflexos decorrentes da conduta autônoma do usuário.
+          </div>
+        </section>
+
+        <!-- Seção 3 -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">3.</span> Ausência de Garantia ou Dever de Atualização Perpétua
+          </h2>
+          <p>
+            O desenvolvedor e titular dos direitos deste software <strong>não garante, não assume e não possui qualquer dever ou obrigação contratual ou legal de atualizar perpetuamente</strong> as informações, calculadoras, parâmetros numéricos, decretos de mínimo existencial ou legislações contidas neste aplicativo.
+          </p>
+          <ul class="list-disc pl-5 mt-3 space-y-2 text-slate-400">
+            <li>
+              <strong>Mudanças na Legislação e Retirada de Venda:</strong> Caso ocorram alterações em leis federais (como na Lei nº 14.181/2021, Código de Defesa do Consumidor ou Código Civil), em decretos presidenciais, em normas do Banco Central ou na jurisprudência dos tribunais, e o desenvolvedor optar por não atualizar o aplicativo, este produto poderá, a exclusivo critério discricionário do desenvolvedor, ser retirado de circulação comercial e ter suas vendas suspensas ou encerradas para novos compradores.
+            </li>
+            <li>
+              <strong>Preservação do Acesso Adquirido:</strong> Os usuários que já adquiriram o produto continuarão tendo acesso à plataforma e às informações existentes exatamente no estado em que foram adquiridas (versão histórica disponibilizada), sem direito a exigir alterações supervenientes, desenvolvimento contínuo de novas versões ou adequações a novos diplomas legais que venham a ser promulgados.
+            </li>
+            <li>
+              <strong>Discricionariedade do Desenvolvedor:</strong> Fica a exclusivo e soberano critério do desenvolvedor decidir se, quando e como atualizará o aplicativo no futuro, bem como decidir se continuará ou retomará as vendas, inexistindo qualquer obrigação perene de fornecimento de atualizações de conteúdo jurídico.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Seção 4 -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">4.</span> Licença de Uso Pessoal e Propriedade Intelectual
+          </h2>
+          <p>
+            O acesso concedido é estritamente pessoal, individual e intransferível. É expressamente proibida a cópia, compartilhamento de login, distribuição, revenda, rateio (compra coletiva), reprodução pública ou engenharia reversa do código-fonte e dos conteúdos deste aplicativo, sob pena de bloqueio imediato do acesso sem direito a reembolso e responsabilização civil e criminal cabível.
+          </p>
+        </section>
+
+        <!-- Seção 5 -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">5.</span> Foro e Legislação Aplicável
+          </h2>
+          <p>
+            Estes Termos são regidos pelas leis da República Federativa do Brasil. Para a solução de quaisquer controvérsias decorrentes destes termos, fica eleito o foro do domicílio do desenvolvedor, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+          </p>
+        </section>
+
+      </div>
+
+      <AppFooter />
+    </div>
+  </body>
+</html>

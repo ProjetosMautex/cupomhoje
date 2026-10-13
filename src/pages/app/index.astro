@@ -1,77 +1,163 @@
 ---
 import '../../styles/global.css';
-import SnowballSimulator from '../../components/app/SnowballSimulator';
-import ScriptGenerator from '../../components/app/ScriptGenerator';
+import AppFooter from '../../components/app/AppFooter.astro';
 
 // Proteção de rota
 const session = Astro.cookies.get('session');
 if (!session) {
   return Astro.redirect('/login');
 }
-
-// Num app real, buscaríamos os dados do usuário no SQLite usando session.value (que é o ID)
 ---
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Dashboard - Protocolo Fim das Cobranças</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Aluno - Protocolo Fim das Cobranças</title>
   </head>
-  <body class="bg-slate-50 font-sans text-slate-800 antialiased flex h-screen overflow-hidden">
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen flex flex-col selection:bg-emerald-500 selection:text-slate-950">
     
-    <!-- Sidebar -->
-    <aside class="w-64 bg-slate-900 text-slate-300 flex-shrink-0 border-r border-slate-800 hidden md:flex flex-col">
-      <div class="p-6 border-b border-slate-800">
-        <h1 class="text-white font-bold text-xl leading-tight">Protocolo<br/><span class="text-blue-500">Fim das Cobranças</span></h1>
-      </div>
-      <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
-        <a href="#" class="block px-4 py-3 bg-blue-600/10 text-blue-400 rounded-lg font-medium border border-blue-500/20">🚀 Dashboard</a>
-        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">📖 O Manual Interativo</a>
-        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">🛡️ Calc. Blindagem</a>
-        <a href="#" class="block px-4 py-3 hover:bg-slate-800 rounded-lg transition">📝 Gerador de Roteiro</a>
-      </nav>
-      <div class="p-4 border-t border-slate-800 text-sm">
-        <p>Sessão Segura</p>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="flex-1 overflow-y-auto p-8">
-      <header class="mb-10">
-        <h2 class="text-3xl font-extrabold text-slate-900">Bem-vindo(a) ao seu escudo financeiro.</h2>
-        <p class="text-slate-500 mt-2">Vamos iniciar a retomada do seu controle.</p>
-      </header>
-
-      <!-- Painel de Missões -->
-      <div class="mb-12">
-        <h3 class="text-xl font-bold text-slate-800 mb-4">Missões do Protocolo</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer border-l-4 border-l-blue-500">
-            <h4 class="font-bold text-slate-900 mb-1">1. O Raio-X</h4>
-            <p class="text-sm text-slate-500">Descubra o valor real e limpe a gordura.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer opacity-70">
-            <h4 class="font-bold text-slate-900 mb-1">2. Blindagem de Salário</h4>
-            <p class="text-sm text-slate-500">Calcule o seu Mínimo Existencial.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer opacity-70">
-            <h4 class="font-bold text-slate-900 mb-1">3. Ataque</h4>
-            <p class="text-sm text-slate-500">Gere e envie a mensagem de negociação.</p>
-          </div>
+    <!-- Cabeçalho Fixo Escuro Mobile-First -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-4 sm:px-8">
+      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div>
+          <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-400">
+            Mini-App Oficial
+          </span>
+          <h1 class="text-lg sm:text-xl font-black text-white leading-tight">
+            Protocolo Fim das Cobranças
+          </h1>
         </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Bem-vindo(a) ao seu escudo financeiro. Vamos iniciar a retomada do seu controle.
+        </p>
       </div>
+    </header>
 
-      <!-- Simulador React -->
-      <div class="mb-12">
-        <SnowballSimulator client:load />
-      </div>
-
-      <!-- Gerador de Roteiro React -->
-      <div class="mb-12">
-        <ScriptGenerator client:load />
-      </div>
+    <!-- Conteúdo Principal: Dashboard de Blocos -->
+    <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-6 sm:py-10">
       
+      <div class="mb-8">
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          Painel de Ferramentas
+        </h2>
+        <p class="text-sm text-slate-400 mt-1">
+          Selecione um bloco abaixo para executar o protocolo prático no seu ritmo.
+        </p>
+      </div>
+
+      <!-- Grid de 4 Blocos Mobile-First -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        
+        <!-- Bloco 1: Leitor Interativo com Tooltips -->
+        <a
+          href="/app/leitura"
+          class="group relative bg-slate-900 hover:bg-slate-800/80 border border-slate-800 hover:border-purple-500/60 rounded-3xl p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              📖
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 block mb-1">
+              Leitura Guiada
+            </span>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+              Leitor Interativo com Tooltips
+            </h3>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+              O conteúdo completo do e-book em modo leitura limpa com termos difíceis explicados em 1 clique.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-purple-400 uppercase tracking-wider">
+            <span>Abrir Leitor</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Bloco 2: Raio-X, Blindagem & Gerador de Roteiro de WhatsApp -->
+        <a
+          href="/app/raiox"
+          class="group relative bg-slate-900 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🛡️
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-400 block">
+                Ferramenta Crucial
+              </span>
+              <span class="bg-blue-500/20 text-blue-300 text-[10px] font-black uppercase px-2 py-0.5 rounded-full border border-blue-500/40">
+                Lei 14.181
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors mt-1">
+              Raio-X, Blindagem & Gerador de Roteiro WhatsApp
+            </h3>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+              Calcule seu Mínimo Existencial, descubra a gordura de juros e gere o roteiro jurídico exato para enviar no WhatsApp dos bancos.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-blue-400 uppercase tracking-wider">
+            <span>Iniciar Raio-X & Roteiro</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Bloco 3: Simulador Bola de Neve -->
+        <a
+          href="/app/simulador"
+          class="group relative bg-slate-900 hover:bg-slate-800/80 border border-slate-800 hover:border-red-500/60 rounded-3xl p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              📈
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-red-400 block mb-1">
+              Choque de Realidade
+            </span>
+            <h3 class="text-xl font-bold text-white group-hover:text-red-300 transition-colors">
+              Simulador "Bola de Neve"
+            </h3>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+              Arraste os sliders e veja como os juros compostos multiplicam a dívida assustadoramente.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-red-400 uppercase tracking-wider">
+            <span>Calcular Projeção</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Bloco 4: Missões do Protocolo (Checklist) -->
+        <a
+          href="/app/missoes"
+          class="group relative bg-slate-900 hover:bg-slate-800/80 border border-slate-800 hover:border-emerald-500/60 rounded-3xl p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🎯
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+              Etapa Prática
+            </span>
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+              Missões do Protocolo
+            </h3>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+              Checklist em 3 passos salvando seu avanço para libertar o seu CPF do pesadelo.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            <span>Abrir Checklist</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+
+      </div>
     </main>
+
+    <!-- Rodapé Padronizado -->
+    <AppFooter />
 
   </body>
 </html>

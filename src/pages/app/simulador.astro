@@ -1,0 +1,37 @@
+---
+import '../../styles/global.css';
+import SnowballSimulator from '../../components/app/SnowballSimulator';
+import AppFooter from '../../components/app/AppFooter.astro';
+
+// Proteção de rota
+const session = Astro.cookies.get('session');
+if (!session) {
+  return Astro.redirect('/login');
+}
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Bola de Neve - Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen p-4 sm:p-8">
+    <div class="max-w-2xl mx-auto">
+      <a href="/app" class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white mb-6 transition">
+        &larr; Voltar ao Início
+      </a>
+
+      <header class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-400 block mb-1">Impacto Financeiro</span>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">Simulador "Bola de Neve"</h1>
+        <p class="text-sm text-slate-400 mt-2">
+          Veja em números claros como os juros dos bancos multiplicam uma dívida pequena ao longo dos meses.
+        </p>
+      </header>
+
+      <SnowballSimulator client:load />
+
+      <AppFooter />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+import db from '../lib/db';
+
+const token = Astro.url.searchParams.get('token');
+const error = Astro.url.searchParams.get('error');
+
+if (!token) {
+  return Astro.redirect('/recuperar-senha');
+}
+
+// Verifica se o token é válido no banco
+const user = db.prepare('SELECT * FROM users WHERE reset_token = ?').get(token) as any;
+const isExpired = !user || !user.reset_token_expires || new Date(user.reset_token_expires).getTime() < Date.now();
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Nova Senha - Protocolo Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-white min-h-screen flex items-center justify-center p-4">
+    
+    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl w-full max-w-md relative">
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner">
+          🔒
+        </div>
+        <h1 class="text-2xl font-black text-white">Criar Nova Senha</h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">
+          {user ? `Conta associada: ${user.email}` : 'Redefina seus dados de acesso.'}
+        </p>
+      </div>
+
+      {isExpired ? (
+        <div class="text-center space-y-4">
+          <div class="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm leading-relaxed">
+            ⚠️ <strong>Link expirado ou inválido!</strong><br />
+            Por motivos de segurança, o link de recuperação tem validade de 1 hora.
+          </div>
+          <a 
+            href="/recuperar-senha" 
+            class="block w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 px-4 rounded-xl transition text-sm"
+          >
+            Solicitar Novo Link de Recuperação
+          </a>
+        </div>
+      ) : (
+        <>
+          {error === 'short_password' && (
+            <div class="mb-5 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">
+              ⚠️ A senha deve conter pelo menos 6 caracteres.
+            </div>
+          )}
+
+          {error === 'mismatch' && (
+            <div class="mb-5 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">
+              ⚠️ As senhas digitadas não coincidem.
+            </div>
+          )}
+
+          <form action="/api/auth/redefinir-senha" method="POST" class="space-y-5">
+            <input type="hidden" name="token" value={token} />
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Nova Senha (mínimo 6 caracteres)
+              </label>
+              <input 
+                type="password" 
+                name="password" 
+                required 
+                placeholder="••••••••" 
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Confirmar Nova Senha
+              </label>
+              <input 
+                type="password" 
+                name="confirm_password" 
+                required 
+                placeholder="••••••••" 
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm"
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black py-3.5 px-4 rounded-xl transition shadow-[0_0_20px_rgba(16,185,129,0.3)] text-sm uppercase tracking-wide cursor-pointer"
+            >
+              Salvar Nova Senha
+            </button>
+          </form>
+        </>
+      )}
+
+      <div class="mt-8 pt-6 border-t border-slate-800 text-center">
+        <a href="/login" class="text-xs text-slate-400 hover:text-emerald-400 font-medium transition">
+          &larr; Voltar para a tela de Login
+        </a>
+      </div>
+    </div>
+
+  </body>
+</html>

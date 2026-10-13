@@ -1,0 +1,29 @@
+---
+import '../../styles/global.css';
+import InteractiveReader from '../../components/app/InteractiveReader';
+import AppFooter from '../../components/app/AppFooter.astro';
+
+// Proteção de rota
+const session = Astro.cookies.get('session');
+if (!session) {
+  return Astro.redirect('/login');
+}
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leitor Interativo - Fim das Cobranças</title>
+  </head>
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto">
+      <a href="/app" class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white mb-6 transition">
+        &larr; Voltar ao Início
+      </a>
+
+      <InteractiveReader client:load />
+
+      <AppFooter />
+    </div>
+  </body>
+</html>
