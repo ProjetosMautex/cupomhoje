@@ -1108,7 +1108,7 @@ export default function InteractiveReader() {
             {/* BOTÃO DE CTA FINAL */}
             <div className="pt-4 text-center">
               <a
-                href="https://kiwify.com.br"
+                href="https://go.hotmart.com/H107879360D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 py-4 px-8 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-2xl shadow-emerald-500/20 transition transform hover:scale-[1.02] active:scale-[0.99]"
