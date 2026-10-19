@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 
-// Substitua abaixo pelo seu link de checkout da Eduzz quando estiver pronto:
-const CHECKOUT_EDUZZ_URL = '#comprar-eduzz';
+// Link de checkout oficial da Eduzz:
+const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
 ---
 <html lang="pt-BR">
   <head>
@@ -13,6 +13,23 @@ const CHECKOUT_EDUZZ_URL = '#comprar-eduzz';
       name="description"
       content="Descubra o Método Exato para Preparar as Marmitas da Sua Semana Inteira em Apenas 2 Horas (Sem Comida Aguada e Sem Desperdício). Acesso Imediato por apenas R$ 14,90."
     />
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2097968984173485');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2097968984173485&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body class="bg-slate-950 font-sans text-slate-100 antialiased min-h-screen selection:bg-emerald-500 selection:text-slate-950">
     <!-- BARRA DE TOPO URGÊNCIA / MOBILE-FIRST -->
