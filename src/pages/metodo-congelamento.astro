@@ -4,15 +4,26 @@ import '../styles/global.css';
 // Link de checkout oficial da Eduzz:
 const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
 ---
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O Método do Congelamento Perfeito — Marmitas da Semana em 2 Horas</title>
+    <title>O Método do Congelamento Perfeito — Fim da Comida Aguada no Freezer</title>
     <meta
       name="description"
-      content="Descubra o Método Exato para Preparar as Marmitas da Sua Semana Inteira em Apenas 2 Horas (Sem Comida Aguada e Sem Desperdício). Acesso Imediato por apenas R$ 14,90."
+      content="Descubra o Método Exato Para Congelar e Aquecer Suas Marmitas Sem Deixar a Comida Aguada ou com Gosto de Geladeira. Acesso Imediato por apenas R$ 14,90."
     />
+    <!-- Preload da imagem principal (LCP) em formato WebP ultraleve -->
+    <link
+      rel="preload"
+      as="image"
+      href="/ebook-congelamento/capa-sales.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+
     <!-- Meta Pixel Code -->
     <script is:inline>
       !function(f,b,e,v,n,t,s)
@@ -26,7 +37,7 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
       fbq('init', '2097968984173485');
       fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript><img height="1" width="1" style="display:none" alt=""
       src="https://www.facebook.com/tr?id=2097968984173485&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
@@ -41,32 +52,34 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
       <!-- =============================================================== -->
       <!-- DOBRA 1: HEADLINE (PROMESSA) + PREÇO + BOTÃO IMEDIATO (MOBILE)  -->
       <!-- =============================================================== -->
-      <section class="relative rounded-3xl overflow-hidden border border-slate-800 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 p-6 sm:p-10 shadow-2xl">
+      <section class="relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/90 p-6 sm:p-10 shadow-2xl">
         <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
           <!-- Coluna de Copy + Botão Imediato -->
           <div class="md:col-span-7 space-y-5 text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-extrabold uppercase tracking-widest">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Método Prático Passo a Passo
+            <!-- PRÉ-HEADLINE -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-extrabold tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Para você que já cozinha para a semana toda...
             </div>
 
-            <!-- A PROMESSA (HEADLINE EXATA) -->
+            <!-- HEADLINE PRINCIPAL -->
             <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight tracking-tight">
-              Descubra o Método Exato para Preparar as Marmitas da Sua Semana Inteira em{' '}
+              Descubra o Método Exato Para Congelar e Aquecer Suas Marmitas{' '}
               <span class="text-emerald-400">
-                Apenas 2 Horas
+                Sem Deixar a Comida Aguada
               </span>{' '}
-              <span class="text-amber-300 block sm:inline text-xl sm:text-3xl font-extrabold mt-1">
-                (Sem Comida Aguada e Sem Desperdício).
+              <span class="text-amber-300">
+                ou com "Gosto de Geladeira".
               </span>
             </h1>
 
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Pare de jogar comida estragada no lixo ou comer marmita com gosto de geladeira. Domine a técnica simples das 4 Leis de Ouro para congelar e descongelar suas refeições mantendo o sabor e a textura de comida feita na hora.
+            <!-- SUB-HEADLINE -->
+            <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+              O congelamento não é um truque mágico, é conservação térmica. Aprenda a técnica que mantém o <strong>arroz soltinho</strong>, a <strong>carne suculenta</strong> e os <strong>legumes crocantes</strong>, preservando 100% da textura de comida feita na hora.
             </p>
 
             <!-- O PREÇO + BOTÃO IMEDIATAMENTE ABAIXO DA PROMESSA -->
-            <div class="bg-slate-900/95 border-2 border-emerald-500/40 rounded-2xl p-5 space-y-4 shadow-xl">
+            <div class="bg-slate-950 border-2 border-emerald-500/40 rounded-2xl p-5 space-y-4 shadow-xl">
               <div class="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
                   <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-400 block">
@@ -77,19 +90,19 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
                     <span class="text-emerald-400 text-2xl sm:text-3xl font-black">R$ 14,90</span>
                   </p>
                 </div>
-                <span class="text-xs font-bold text-slate-400 line-through">
+                <span class="text-xs font-bold text-slate-300 line-through">
                   De R$ 47,90
                 </span>
               </div>
 
               <a
                 href={CHECKOUT_EDUZZ_URL}
-                class="block w-full text-center rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base sm:text-lg py-4 px-6 shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer"
+                class="block w-full text-center rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base sm:text-lg py-4 px-6 shadow-lg transition cursor-pointer"
               >
                 👉 QUERO ACESSO IMEDIATO POR R$ 14,90
               </a>
 
-              <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 pt-1">
+              <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300 pt-1">
                 <span>🔒 Compra 100% Segura (Eduzz)</span>
                 <span>•</span>
                 <span>⚡ Pix ou Cartão</span>
@@ -99,16 +112,20 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
             </div>
           </div>
 
-          <!-- Mockup 3D Visual da Capa -->
+          <!-- Mockup 3D Visual da Capa (WebP Otimizado 46 KiB) -->
           <div class="md:col-span-5 flex flex-col items-center justify-center">
-            <div class="relative w-60 sm:w-72 rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-500/40 group">
+            <div class="relative w-60 sm:w-72 rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-500/40">
               <img
-                src="/ebook-congelamento/capa.jpg"
+                src="/ebook-congelamento/capa-sales.webp"
                 alt="Mockup 3D do Ebook O Método do Congelamento Perfeito"
-                class="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
+                width="480"
+                height="643"
+                fetchpriority="high"
+                decoding="async"
+                class="w-full h-auto object-cover"
               />
-              <div class="bg-slate-950/95 border-t border-slate-800 px-4 py-2.5 text-center">
-                <span class="text-xs font-extrabold text-amber-400 uppercase tracking-wider">
+              <div class="bg-slate-950 border-t border-slate-800 px-4 py-2.5 text-center">
+                <span class="text-xs font-extrabold text-amber-300 uppercase tracking-wider">
                   📖 Guia Digital Interativo + Checklists
                 </span>
               </div>
@@ -118,86 +135,90 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
       </section>
 
       <!-- =============================================================== -->
-      <!-- DOBRA 2: A DOR VS. SOLUÇÃO (OS 2 BENEFÍCIOS MÁXIMOS)            -->
+      <!-- DOBRA 2: AS DUAS MAIORES FRUSTRAÇÕES (TEXTURA + TEMPO)          -->
       <!-- =============================================================== -->
       <section class="space-y-8">
         <div class="text-center max-w-2xl mx-auto space-y-2">
           <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400">
-            Por que este método muda sua rotina?
+            Por que este método vai salvar o seu domingo?
           </span>
           <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">
-            Dois Problemas Que Acabam Hoje na Sua Cozinha
+            As Duas Maiores Frustrações Que Acabam Hoje na Sua Cozinha
           </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Benefício 1: Economia de Dinheiro -->
-          <div class="bg-slate-900/80 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+          <!-- Benefício 1: Textura e Sabor -->
+          <div class="bg-slate-900/90 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-extrabold uppercase tracking-wider">
-              💰 Benefício #1 • Economia Real no Bolso
+              🧊 Benefício #1 • O Fim da Comida Empapada e Ressecada
             </div>
 
             <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
-              Se Paga no Primeiro Alimento Que Não Vai Para o Lixo
+              O seu esforço não vai mais para o lixo na quarta-feira.
             </h3>
 
-            <div class="bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-300 space-y-1">
+            <div class="bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-200 space-y-1">
               <strong class="text-rose-300 block">❌ Como é hoje:</strong>
-              Você faz compras no mercado, deixa legumes murchando na gaveta da geladeira, esquece sobras de carne ou feijão que azedam e acaba jogando dinheiro literalmente no lixo toda semana.
+              Você passa horas no fogão no fim de semana preparando tudo com carinho. Mas quando você aquece a marmita no meio da semana, o arroz está nadando em uma poça de água, a batata está esponjosa e a carne está cinza e seca. Todo o seu esforço perde o sabor.
             </div>
 
-            <div class="bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-200 space-y-1">
+            <div class="bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-100 space-y-1">
               <strong class="text-emerald-300 block">✅ Com o Método:</strong>
-              O valor simbólico de <strong>R$ 14,90</strong> se paga logo no primeiro tomate, bandeja de frango ou porção de carne que você congela do jeito certo e salva de estragar — sem falar no primeiro pedido caro de aplicativo que você evita na semana!
+              Você vai aplicar as <strong>4 Leis do Congelamento Perfeito</strong> (Choque Térmico e Bloqueio de Ar). Ao retirar sua marmita do micro-ondas, o molho estará brilhando, os grãos soltinhos e a carne com a mesma suculência exata de quando saiu da panela.
             </div>
           </div>
 
-          <!-- Benefício 2: Economia de Tempo -->
-          <div class="bg-slate-900/80 border border-amber-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+          <!-- Benefício 2: Linha de Produção Inteligente -->
+          <div class="bg-slate-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-extrabold uppercase tracking-wider">
-              ⏰ Benefício #2 • Paz nas Noites da Semana
+              ⏰ Benefício #2 • A Linha de Produção Inteligente
             </div>
 
             <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">
-              Nunca Mais Lave Panelas em Uma Quarta-Feira à Noite
+              Nunca mais perca o domingo inteiro na beira do fogão.
             </h3>
 
-            <div class="bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-300 space-y-1">
+            <div class="bg-rose-950/30 border-l-4 border-rose-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-200 space-y-1">
               <strong class="text-rose-300 block">❌ Como é hoje:</strong>
-              Chegar exausto do trabalho às 20h, encarar a pia cheia, ter que picar alho e cebola, esperar a panela de pressão e ainda limpar o fogão engordurado todas as noites.
+              Mesmo já fazendo marmitas, o processo é exaustivo. Você faz um prato de cada vez, suja todas as panelas da casa e termina o seu domingo de folga exausta e com uma montanha de louça na pia.
             </div>
 
-            <div class="bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-200 space-y-1">
+            <div class="bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-2xl text-xs sm:text-sm text-slate-100 space-y-1">
               <strong class="text-emerald-300 block">✅ Com o Método:</strong>
-              Com o <strong>Cronograma de Linha de Montagem de 2 Horas</strong>, você usa forno, pressão e bocas do fogão ao mesmo tempo em um único dia. De segunda a sexta, sua única tarefa é tirar a marmita pronta e aquecer em 3 minutos com sabor de comida fresca!
+              Com o <strong>Cronograma de Linha de Montagem de 120 Minutos</strong>, você aprende a sincronizar forno, panela de pressão e fogão ao mesmo tempo. Em apenas 2 horas, sua semana inteira está empilhada no freezer e a sua cozinha já está limpa!
             </div>
           </div>
         </div>
       </section>
 
       <!-- =============================================================== -->
-      <!-- DOBRA 3: O QUE TEM DENTRO (VISUAL + MOCKUPS PRÁTICOS)           -->
+      <!-- DOBRA 3: O QUE TEM DENTRO (IMAGENS WEBP LAZY-LOAD ULTRALEVES)   -->
       <!-- =============================================================== -->
-      <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
+      <section class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
         <div class="text-center max-w-2xl mx-auto space-y-2">
           <span class="text-xs uppercase font-extrabold tracking-widest text-sky-400">
             Por Dentro do Material • Direto ao Ponto
           </span>
           <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">
-            Veja Tudo o Que Você Vai Receber Imediatamente
+            O Segredo dos Restaurantes, Agora no Seu Celular
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base">
-            Sem enrolação teórica. Um guia visual, interativo e pensado para você abrir no celular enquanto está na cozinha:
+          <p class="text-slate-200 text-sm sm:text-base">
+            Sem enrolação teórica. Um guia visual e interativo para você abrir enquanto cozinha:
           </p>
         </div>
 
         <!-- Galeria Visual de Mockups do Conteúdo Interno -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Módulo 1 -->
-          <div class="bg-slate-950/80 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
             <img
-              src="/ebook-congelamento/lei-2-bloqueio-ar.jpg"
-              alt="As 4 Leis de Ouro do Congelamento"
+              src="/ebook-congelamento/lei-2-sales.webp"
+              alt="As 4 Leis Anti-Água e Queimadura de Frio"
+              width="600"
+              height="322"
+              loading="lazy"
+              decoding="async"
               class="w-full h-44 object-cover object-center"
             />
             <div class="p-5 space-y-2 flex-1">
@@ -205,19 +226,23 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
                 Capítulo 1 • A Base Científica Simples
               </span>
               <h3 class="text-lg font-black text-white">
-                As 4 Leis de Ouro Anti-Água
+                As 4 Leis Anti-Água e Queimadura de Frio
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                O passo a passo de resfriamento, bloqueio de ar (regra de 1 dedo de espaço), porcionamento seguro e etiquetagem para nenhuma marmita criar cristais de gelo.
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                O passo a passo vital de resfriamento, bloqueio de oxigênio (a regra de 1 dedo de espaço) e etiquetagem para impedir que a sua comida crie aqueles cristais de gelo que destroem o sabor.
               </p>
             </div>
           </div>
 
           <!-- Módulo 2 -->
-          <div class="bg-slate-950/80 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
             <img
-              src="/ebook-congelamento/cap2-branqueamento.jpg"
-              alt="Tabela do Semáforo dos Alimentos"
+              src="/ebook-congelamento/cap2-sales.webp"
+              alt="O Semáforo dos Ingredientes: Por Que Sua Batata Fica Esponjosa?"
+              width="600"
+              height="322"
+              loading="lazy"
+              decoding="async"
               class="w-full h-44 object-cover object-center"
             />
             <div class="p-5 space-y-2 flex-1">
@@ -225,50 +250,58 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
                 Capítulo 2 • O Semáforo dos Ingredientes
               </span>
               <h3 class="text-lg font-black text-white">
-                O Que Congelar e O Que Nunca Colocar no Freezer
+                Por Que Sua Batata Fica Esponjosa?
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Descubra por que a batata inglesa fica esponjosa (e quais raízes usar no lugar), como fazer o choque térmico em brócolis e o segredo dos molhos que nunca talham.
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                O mapa absoluto do que reage bem ao frio. Descubra quais raízes usar para o purê perfeito, como fazer o branqueamento em brócolis para manter o verde vivo e o segredo dos molhos que nunca talham.
               </p>
             </div>
           </div>
 
           <!-- Módulo 3 -->
-          <div class="bg-slate-950/80 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
             <img
-              src="/ebook-congelamento/cap3-etapa4-montagem.jpg"
-              alt="Cronograma de Cozinha em Lote em 2 Horas"
+              src="/ebook-congelamento/cap3-sales.webp"
+              alt="A Linha de Produção: O Cronograma Exato de 2 Horas"
+              width="600"
+              height="322"
+              loading="lazy"
+              decoding="async"
               class="w-full h-44 object-cover object-center"
             />
             <div class="p-5 space-y-2 flex-1">
               <span class="text-xs font-extrabold uppercase tracking-wider text-sky-400">
-                Capítulo 3 • Linha de Produção
+                Capítulo 3 • A Linha de Produção
               </span>
               <h3 class="text-lg font-black text-white">
                 O Cronograma Exato de 2 Horas
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                O roteiro cronometrado minuto a minuto (do minuto 0 ao 120) para cozinhar todas as marmitas da semana sujando a tábua uma única vez.
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                O roteiro cronometrado minuto a minuto (do minuto 0 ao 120) para você parar de cozinhar prato por prato e produzir todas as marmitas sujando a tábua de corte uma única vez.
               </p>
             </div>
           </div>
 
           <!-- Módulo 4 -->
-          <div class="bg-slate-950/80 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
             <img
-              src="/ebook-congelamento/cap4-microondas-vapor.jpg"
-              alt="A Arte da Ressurreição no Micro-ondas"
+              src="/ebook-congelamento/cap4-sales.webp"
+              alt="O Truque do Micro-ondas (Estufa de Vapor)"
+              width="600"
+              height="322"
+              loading="lazy"
+              decoding="async"
               class="w-full h-44 object-cover object-center"
             />
             <div class="p-5 space-y-2 flex-1">
               <span class="text-xs font-extrabold uppercase tracking-wider text-purple-400">
-                Capítulo 4 + Checklist de Primeira Semana
+                Capítulo 4 + Checklist de Execução
               </span>
               <h3 class="text-lg font-black text-white">
-                O Truque do Reaquecimento a Vapor
+                O Truque do Micro-ondas (Estufa de Vapor)
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                A técnica da colher de água e tampa entreaberta no micro-ondas para que o arroz e o frango saiam úmidos e macios como se tivessem acabado de sair da panela.
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                O aquecimento errado destrói um prato perfeito. Aprenda a técnica da colher de água e tampa entreaberta para reidratar os grãos e garantir que a refeição saia fumegante e macia.
               </p>
             </div>
           </div>
@@ -280,30 +313,30 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
       <!-- =============================================================== -->
       <section
         id="comprar-eduzz"
-        class="bg-gradient-to-br from-emerald-950/70 via-slate-900 to-slate-950 border-2 border-emerald-500/50 rounded-3xl p-6 sm:p-10 shadow-2xl text-center space-y-6"
+        class="bg-slate-900 border-2 border-emerald-500/50 rounded-3xl p-6 sm:p-10 shadow-2xl text-center space-y-6"
       >
         <h2 class="text-2xl sm:text-4xl font-black text-white max-w-2xl mx-auto leading-tight">
-          Comece Sua Semana Com o Freezer Cheio e a Pia Limpa
+          Não deixe o seu esforço na cozinha perder o sabor.
         </h2>
 
         <p class="text-slate-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-          Toque no botão abaixo para garantir seu acesso imediato ao <strong>Método do Congelamento Perfeito</strong> por menos do que custa uma única taxa de entrega de aplicativo.
+          Toque no botão abaixo para garantir o método de conservação térmica definitivo por menos do que custa um lanche na padaria. <span class="text-amber-300 font-semibold">(Com os complementos de Receitas Práticas disponíveis no checkout).</span>
         </p>
 
-        <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-6 max-w-md mx-auto space-y-4 shadow-xl">
-          <div class="text-xs font-bold uppercase tracking-widest text-slate-400">
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 max-w-md mx-auto space-y-4 shadow-xl">
+          <div class="text-xs font-bold uppercase tracking-widest text-slate-300">
             Pagamento Único • Sem Mensalidades
           </div>
           <div class="text-4xl sm:text-5xl font-black text-emerald-400">
             R$ 14,90
           </div>
-          <div class="text-xs text-slate-300">
+          <div class="text-xs text-slate-200">
             Acesso liberado imediatamente após a confirmação
           </div>
 
           <a
             href={CHECKOUT_EDUZZ_URL}
-            class="block w-full text-center rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base sm:text-lg py-4 px-6 shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer"
+            class="block w-full text-center rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base sm:text-lg py-4 px-6 shadow-lg transition cursor-pointer"
           >
             🛒 COMPRAR AGORA POR R$ 14,90
           </a>
@@ -311,8 +344,8 @@ const CHECKOUT_EDUZZ_URL = 'https://chk.eduzz.com/b2j5fsfj';
       </section>
     </main>
 
-    <footer class="border-t border-slate-900 py-8 px-4 text-center text-xs text-slate-500 space-y-2">
-      <p class="font-bold text-slate-400">
+    <footer class="border-t border-slate-900 py-8 px-4 text-center text-xs text-slate-300 space-y-2">
+      <p class="font-bold text-slate-200">
         O Método do Congelamento Perfeito — Projetos Mautex
       </p>
       <p>
