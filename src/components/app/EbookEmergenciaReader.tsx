@@ -224,8 +224,12 @@ export default function EbookEmergenciaReader() {
           <div className="md:col-span-5 flex justify-center">
             <div className="relative w-64 sm:w-72 rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30 group">
               <img
-                src="/ebook-emergencia/capa-emergencia.jpg"
+                src="/ebook-emergencia/capa-emergencia.webp"
                 alt="Capa do Guia O Plano de Emergência: 15 Marmitas em 15 Minutos (Uma Panela Só)"
+                width={560}
+                height={748}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
@@ -343,8 +347,12 @@ export default function EbookEmergenciaReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-emergencia/cat1-frigideira.jpg"
+                src="/ebook-emergencia/cat1-frigideira.webp"
                 alt="Frigideira funda antiaderente preparando frango oriental com brócolis e iscas de carne aceboladas em minutos"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -799,8 +807,12 @@ export default function EbookEmergenciaReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-emergencia/cat2-pressao.jpg"
+                src="/ebook-emergencia/cat2-pressao.webp"
                 alt="Galinhada dourada na panela de pressão e sopa cremosa de ervilha com bacon"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1022,8 +1034,12 @@ export default function EbookEmergenciaReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-emergencia/cat3-montagem.jpg"
+                src="/ebook-emergencia/cat3-montagem.webp"
                 alt="Marmitas montadas rapidamente com panquecas de tortilha ao molho vermelho, escondidinho rápido e arroz de forno"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">

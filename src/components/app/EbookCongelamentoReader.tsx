@@ -474,10 +474,14 @@ export default function EbookCongelamentoReader() {
 
           <div className="max-w-sm sm:max-w-md mx-auto mb-8 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(16,185,129,0.25)] border-2 border-slate-800/90 group relative">
             <img
-              src="/ebook-congelamento/capa.jpg"
-              alt="Capa do E-book: O Método do Congelamento Perfeito - O Fim do Desperdício e das Horas Perdidas na Cozinha"
-              className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
+                src="/ebook-congelamento/capa.webp"
+                alt="Capa do E-book: O Método do Congelamento Perfeito - O Fim do Desperdício e das Horas Perdidas na Cozinha"
+                width={560}
+                height={748}
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
           </div>
 
           <span className="text-xs uppercase font-extrabold tracking-widest text-amber-400 block mb-2">
@@ -532,10 +536,14 @@ export default function EbookCongelamentoReader() {
 
           <figure className="my-8 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
             <img
-              src="/ebook-congelamento/intro-marmitas.jpg"
-              alt="Três potes de vidro herméticos alinhados sobre bancada de madeira clara contendo frango grelhado, arroz soltinho, brócolis bem verde e fatias de batata-doce"
-              className="w-full max-h-[420px] object-cover object-center"
-            />
+                src="/ebook-congelamento/intro-marmitas.webp"
+                alt="Três potes de vidro herméticos alinhados sobre bancada de madeira clara contendo frango grelhado, arroz soltinho, brócolis bem verde e fatias de batata-doce"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
+                className="w-full max-h-[420px] object-cover object-center"
+              />
             <figcaption className="px-5 py-3.5 text-xs sm:text-sm text-slate-400 bg-slate-950/90 border-t border-slate-800/80 flex items-center justify-between gap-2">
               <span>
                 <strong className="text-emerald-400">O Padrão Revista:</strong> Potes de vidro herméticos com porções equilibradas que mantêm a cor vibrante, a textura firme e o sabor de comida feita na hora.
@@ -599,8 +607,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/lei-1-temperatura.jpg"
+                src="/ebook-congelamento/lei-1-temperatura.webp"
                 alt="Pote de vidro retangular aberto sobre pia de granito com fumaça suave saindo da carne com molho e pano de prato xadrez ao lado"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -641,8 +653,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/lei-2-bloqueio-ar.jpg"
+                src="/ebook-congelamento/lei-2-bloqueio-ar.webp"
                 alt="Pote de vidro temperado com tampa hermética de 4 travas e anel de silicone, preenchido até faltar um dedo para a borda"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -702,8 +718,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/lei-3-porcionamento.jpg"
+                src="/ebook-congelamento/lei-3-porcionamento.webp"
                 alt="Mão segurando uma pequena porção individual de feijão escuro dentro de um saquinho ziplock transparente fechado a vácuo"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -763,8 +783,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/lei-4-etiqueta.jpg"
+                src="/ebook-congelamento/lei-4-etiqueta.webp"
                 alt="Macro close-up de etiqueta de fita crepe branca na tampa de um pote escrito Frango com Batata-Doce - 16/10"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -965,8 +989,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap2-raizes-frango.jpg"
+                src="/ebook-congelamento/cap2-raizes-frango.webp"
                 alt="Marmita de vidro dividida ao meio: de um lado fatias de batata-doce e pedaços de macaxeira dourados, do outro peito de frango grelhado suculento"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1060,8 +1088,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap2-branqueamento.jpg"
+                src="/ebook-congelamento/cap2-branqueamento.webp"
                 alt="Escumadeira de aço inox levantando pedaços de brócolis verde vibrante e cenoura laranja de um banho de água com cubos de gelo"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1299,8 +1331,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap3-etapa1-mise-en-place.jpg"
+                src="/ebook-congelamento/cap3-etapa1-mise-en-place.webp"
                 alt="Tábua de corte de madeira rústica com tigelas de vidro contendo alho picado, cebola picada, cubos de batata-doce, macaxeira e tiras de frango temperado ao lado de faca de chef"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1414,8 +1450,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap3-etapa3-fogao.jpg"
+                src="/ebook-congelamento/cap3-etapa3-fogao.webp"
                 alt="Fogão de aço inox com panela grande fervendo água com brócolis bem verde e outra panela ao fundo com arroz branco soltinho recém-feito"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1496,8 +1536,12 @@ export default function EbookCongelamentoReader() {
 
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap3-etapa4-montagem.jpg"
+                src="/ebook-congelamento/cap3-etapa4-montagem.webp"
                 alt="Fileira de 6 marmitas de vidro retangulares em bancada de granito claro preenchidas harmoniosamente com purê de macaxeira, batata-doce, carne de panela ao molho e brócolis"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1675,8 +1719,12 @@ export default function EbookCongelamentoReader() {
             {/* Imagem 1 do Capítulo 4 */}
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap4-geladeira.jpg"
+                src="/ebook-congelamento/cap4-geladeira.webp"
                 alt="Marmita de vidro hermética levemente suada pelo frio repousando sobre a prateleira iluminada de uma geladeira moderna com legumes e filé de frango"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1765,8 +1813,12 @@ export default function EbookCongelamentoReader() {
             {/* Imagem 2 do Capítulo 4 */}
             <figure className="rounded-2xl overflow-hidden border border-slate-800 shadow-lg bg-slate-900">
               <img
-                src="/ebook-congelamento/cap4-microondas-vapor.jpg"
+                src="/ebook-congelamento/cap4-microondas-vapor.webp"
                 alt="Close-up do interior de um micro-ondas limpo com pote de vidro contendo arroz branco e carne de panela, tampa semiaberta e nuvem de vapor quente saindo"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-4 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1928,10 +1980,14 @@ export default function EbookCongelamentoReader() {
           {/* Imagem da Conclusão */}
           <figure className="rounded-3xl overflow-hidden border-2 border-emerald-500/30 shadow-2xl bg-slate-950">
             <img
-              src="/ebook-congelamento/conclusao-freezer-organizado.jpg"
-              alt="Mulher sorridente e relaxada fechando a porta de um freezer vertical completamente abastecido com marmitas empilhadas e organizadas, com cozinha limpa ao fundo"
-              className="w-full max-h-[440px] object-cover object-center"
-            />
+                src="/ebook-congelamento/conclusao-freezer-organizado.webp"
+                alt="Mulher sorridente e relaxada fechando a porta de um freezer vertical completamente abastecido com marmitas empilhadas e organizadas, com cozinha limpa ao fundo"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
+                className="w-full max-h-[440px] object-cover object-center"
+              />
             <figcaption className="px-5 py-4 text-xs sm:text-sm text-slate-300 bg-slate-950 border-t border-slate-800">
               <strong className="text-emerald-400">Paz, Tempo Livre e Dever Cumprido:</strong> Freezer abastecido, cozinha impecável e uma semana inteira de refeições prontas esperando por você.
             </figcaption>

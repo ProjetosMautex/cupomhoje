@@ -196,10 +196,14 @@ export default function EbookReceitasReader() {
 
           <div className="max-w-sm sm:max-w-md mx-auto mb-8 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(245,158,11,0.25)] border-2 border-slate-800/90 group relative">
             <img
-              src="/ebook-receitas/capa-receitas.jpg"
-              alt="Capa do E-book: Guia Prático 30 Receitas à Prova de Congelamento - Produzido por Projetos Mautex"
-              className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
+                src="/ebook-receitas/capa-receitas.webp"
+                alt="Capa do E-book: Guia Prático 30 Receitas à Prova de Congelamento - Produzido por Projetos Mautex"
+                width={560}
+                height={748}
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
           </div>
 
           <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-400 block mb-2">
@@ -272,8 +276,12 @@ export default function EbookReceitasReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-receitas/cat1-proteinas.jpg"
+                src="/ebook-receitas/cat1-proteinas.webp"
                 alt="Carnes e frangos suculentos preparados com molho encorpado para congelamento perfeito"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -893,8 +901,12 @@ export default function EbookReceitasReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-receitas/cat2-escondidinhos.jpg"
+                src="/ebook-receitas/cat2-escondidinhos.webp"
                 alt="Escondidinho de macaxeira com carne de sol gratinado com queijo de manteiga e assados em potes de vidro"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1448,8 +1460,12 @@ export default function EbookReceitasReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-receitas/cat3-acompanhamentos.jpg"
+                src="/ebook-receitas/cat3-acompanhamentos.webp"
                 alt="Arroz branco soltinho, feijão de caldo grosso, mix de raízes assadas com alecrim e brócolis branqueado na manteiga"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
@@ -1718,8 +1734,12 @@ export default function EbookReceitasReader() {
 
             <figure className="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950 mb-8">
               <img
-                src="/ebook-receitas/cat4-caldos.jpg"
+                src="/ebook-receitas/cat4-caldos.webp"
                 alt="Caldo verde de macaxeira com linguiça e couve, caldo de abóbora com gengibre e frango, e caldo de feijão encorpado com bacon"
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-h-96 object-cover object-center"
               />
               <figcaption className="px-5 py-3 text-xs text-slate-400 bg-slate-950 border-t border-slate-800/80">
